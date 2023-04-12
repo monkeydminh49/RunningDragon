@@ -1,0 +1,22 @@
+#pragma once
+#include "GameStateBase.h"
+#include "../GameManager/ScoreManager.h"
+#include "../GameObjects/MenuBackground.h"
+class GSHighScore : public GameStateBase {
+public:
+	GSHighScore();
+	virtual ~GSHighScore();
+
+	void Exit();
+	void Pause();
+	void Resume();
+
+	void Init();
+	void Update(float deltaTime);
+	void Render(sf::RenderWindow* window);
+private:
+	std::list<GameButton*> m_ListBtn;
+	std::list<sf::Text*> m_ListScore;
+	sf::Text m_Title;
+
+};
